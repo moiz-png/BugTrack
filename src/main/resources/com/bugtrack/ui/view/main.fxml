@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.bugtrack.ui.controller.MainController"
+            styleClass="app-root">
+
+    <left>
+        <VBox styleClass="sidebar" prefWidth="220" spacing="4">
+            <Label text="BugTrack" styleClass="brand"/>
+            <VBox fx:id="navBox" spacing="2" VBox.vgrow="ALWAYS"/>
+            <VBox styleClass="sidebar-user" spacing="2">
+                <Label fx:id="userLabel" styleClass="sidebar-user-name"/>
+                <Label fx:id="roleLabel" styleClass="sidebar-user-role"/>
+                <Button text="Log out" styleClass="link-button" onAction="#onLogout"/>
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox>
+            <HBox styleClass="topbar" alignment="CENTER_LEFT" spacing="12">
+                <Label fx:id="pageTitle" styleClass="page-title"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label text="Ctrl+D dashboard · Ctrl+B bugs · Ctrl+N new bug" styleClass="hint"/>
+                <Button text="Notifications" styleClass="ghost" contentDisplay="RIGHT" graphicTextGap="8"
+                        onAction="#onNotifications">
+                    <graphic>
+                        <Label fx:id="unreadBadge" styleClass="unread-badge" visible="false"/>
+                    </graphic>
+                </Button>
+            </HBox>
+            <StackPane fx:id="contentPane" styleClass="content" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </center>
+</BorderPane>

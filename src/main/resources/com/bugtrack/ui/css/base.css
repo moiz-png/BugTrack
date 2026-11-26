@@ -1,0 +1,369 @@
+/*
+ * BugTrack light theme and component styles.
+ * Colours are defined once here as looked-up colours; dark.css only overrides them.
+ */
+
+.root {
+    -bt-bg: #f4f6fa;
+    -bt-surface: #ffffff;
+    -bt-surface-alt: #eef1f6;
+    -bt-border: #dde2ea;
+    -bt-text: #1f2937;
+    -bt-muted: #6b7280;
+    -bt-primary: #2f5bd3;
+    -bt-primary-hover: #2549ad;
+    -bt-sidebar: #1e2a44;
+    -bt-sidebar-text: #c9d3e6;
+    -bt-danger: #c0392b;
+    -bt-warning-bg: #fff6e0;
+    -bt-warning-text: #8a5a00;
+
+    -fx-base: -bt-surface;
+    -fx-background: -bt-bg;
+    -fx-control-inner-background: -bt-surface;
+    -fx-accent: -bt-primary;
+    -fx-focus-color: -bt-primary;
+    -fx-faint-focus-color: transparent;
+    -fx-text-background-color: -bt-text;
+    -fx-background-color: -bt-bg;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+}
+
+.label {
+    -fx-text-fill: -bt-text;
+}
+
+.muted {
+    -fx-text-fill: -bt-muted;
+}
+
+.hint {
+    -fx-text-fill: -bt-muted;
+    -fx-font-size: 11px;
+}
+
+.field-label {
+    -fx-text-fill: -bt-muted;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.error-label {
+    -fx-text-fill: -bt-danger;
+}
+
+/* ---------- Buttons ---------- */
+
+.button {
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+}
+
+.button.primary {
+    -fx-background-color: -bt-primary;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 7 16;
+}
+
+.button.primary:hover {
+    -fx-background-color: -bt-primary-hover;
+}
+
+.button.ghost {
+    -fx-background-color: transparent;
+    -fx-border-color: -bt-border;
+    -fx-border-radius: 6;
+    -fx-text-fill: -bt-text;
+}
+
+.button.ghost:hover {
+    -fx-background-color: -bt-surface-alt;
+}
+
+.button.link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -bt-primary;
+    -fx-padding: 2 0;
+}
+
+.button.link-button:hover {
+    -fx-underline: true;
+}
+
+/* ---------- Login ---------- */
+
+.login-root {
+    -fx-background-color: linear-gradient(to bottom right, #1e2a44, #2f5bd3);
+}
+
+.login-card {
+    -fx-background-color: -bt-surface;
+    -fx-background-radius: 12;
+    -fx-padding: 32;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 24, 0, 0, 6);
+}
+
+.login-title {
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -bt-primary;
+}
+
+/* ---------- Main window ---------- */
+
+.sidebar {
+    -fx-background-color: -bt-sidebar;
+    -fx-padding: 18 12;
+}
+
+.brand {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 8 16 8;
+}
+
+.nav-item {
+    -fx-background-color: transparent;
+    -fx-text-fill: -bt-sidebar-text;
+    -fx-alignment: center-left;
+    -fx-padding: 9 12;
+    -fx-font-size: 13.5px;
+}
+
+.nav-item:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+}
+
+.nav-item.active {
+    -fx-background-color: -bt-primary;
+    -fx-text-fill: white;
+}
+
+.sidebar-user {
+    -fx-padding: 12 8 0 8;
+    -fx-border-color: rgba(255, 255, 255, 0.12) transparent transparent transparent;
+}
+
+.sidebar-user-name {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.sidebar-user-role {
+    -fx-text-fill: -bt-sidebar-text;
+    -fx-font-size: 12px;
+}
+
+.sidebar .button.link-button {
+    -fx-text-fill: #9db7ff;
+}
+
+.topbar {
+    -fx-background-color: -bt-surface;
+    -fx-padding: 12 20;
+    -fx-border-color: transparent transparent -bt-border transparent;
+}
+
+.page-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.unread-badge {
+    -fx-background-color: -bt-danger;
+    -fx-background-radius: 10;
+    -fx-text-fill: white;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 6;
+}
+
+.content {
+    -fx-padding: 20;
+    -fx-background-color: -bt-bg;
+}
+
+.page-scroll,
+.page-scroll > .viewport {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+/* ---------- Cards ---------- */
+
+.card,
+.form-card,
+.stat-card {
+    -fx-background-color: -bt-surface;
+    -fx-background-radius: 10;
+    -fx-border-color: -bt-border;
+    -fx-border-radius: 10;
+    -fx-padding: 16;
+}
+
+.stat-caption {
+    -fx-text-fill: -bt-muted;
+}
+
+.stat-value {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.chart-title,
+.axis-label {
+    -fx-text-fill: -bt-text;
+}
+
+.axis {
+    -fx-tick-label-fill: -bt-muted;
+}
+
+.chart-bar {
+    -fx-bar-fill: -bt-primary;
+}
+
+/* ---------- Badges (status and priority colours) ---------- */
+
+.badge {
+    -fx-padding: 2 9;
+    -fx-background-radius: 10;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1f2937;
+}
+
+.badge-large {
+    -fx-font-size: 13px;
+    -fx-padding: 4 12;
+}
+
+.status-new { -fx-background-color: #dbe7ff; }
+.status-assigned { -fx-background-color: #e5dcff; }
+.status-in-progress { -fx-background-color: #fff0c2; }
+.status-resolved { -fx-background-color: #d3f3ea; }
+.status-qa-verification { -fx-background-color: #ffe4c4; }
+.status-closed { -fx-background-color: #d5f0d5; }
+.status-reopened { -fx-background-color: #ffd6d2; }
+.status-rejected { -fx-background-color: #e3e5e8; }
+
+.priority-low { -fx-background-color: #e3e5e8; }
+.priority-medium { -fx-background-color: #dbe7ff; }
+.priority-high { -fx-background-color: #ffe1c2; }
+.priority-critical { -fx-background-color: #ffcfca; -fx-text-fill: #8a1c12; }
+
+/* ---------- Tables, lists, forms ---------- */
+
+.table-view,
+.list-view {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: -bt-border;
+}
+
+.table-view .column-header {
+    -fx-font-weight: bold;
+}
+
+.text-field.invalid,
+.text-area.invalid,
+.combo-box.invalid {
+    -fx-border-color: -bt-danger;
+    -fx-border-radius: 4;
+}
+
+.combo-box .list-cell.prompt {
+    -fx-text-fill: -bt-muted;
+}
+
+.duplicate-box {
+    -fx-background-color: -bt-warning-bg;
+    -fx-background-radius: 6;
+    -fx-padding: 10;
+}
+
+.warning-text {
+    -fx-text-fill: -bt-warning-text;
+}
+
+.pager {
+    -fx-pref-height: 46;
+    -fx-max-height: 46;
+}
+
+/* ---------- Bug details ---------- */
+
+.bug-id {
+    -fx-text-fill: -bt-muted;
+    -fx-font-size: 20px;
+}
+
+.bug-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.detail-tabs > .tab-header-area > .headers-region > .tab {
+    -fx-padding: 4 12;
+}
+
+.tab-body {
+    -fx-padding: 14;
+}
+
+.comment {
+    -fx-background-color: -bt-surface;
+    -fx-background-radius: 8;
+    -fx-border-color: -bt-border;
+    -fx-border-radius: 8;
+    -fx-padding: 10;
+}
+
+.comment-meta {
+    -fx-text-fill: -bt-muted;
+    -fx-font-size: 11px;
+}
+
+.comment-text {
+    -fx-fill: -bt-text;
+}
+
+.mention {
+    -fx-fill: -bt-primary;
+    -fx-font-weight: bold;
+}
+
+.reply-bar {
+    -fx-background-color: -bt-surface-alt;
+    -fx-background-radius: 6;
+    -fx-padding: 4 10;
+}
+
+/* ---------- Notifications ---------- */
+
+.notification-list .list-cell {
+    -fx-padding: 10 12;
+}
+
+.notification-list .list-cell.unread .notification-message {
+    -fx-font-weight: bold;
+}
+
+.notification-list .list-cell.unread {
+    -fx-border-color: transparent transparent transparent -bt-primary;
+    -fx-border-width: 0 0 0 3;
+}
+
+/* ---------- Dialogs ---------- */
+
+.dialog-pane {
+    -fx-background-color: -bt-surface;
+}
