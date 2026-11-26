@@ -1,0 +1,53 @@
+# --- Build output ---
+target/
+out/
+build/
+bin/
+
+# --- Maven ---
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+release.properties
+dependency-reduced-pom.xml
+.mvn/wrapper/maven-wrapper.jar
+
+# --- Local configuration and secrets (DB credentials stay out of Git) ---
+config/*.properties
+!config/*.example.properties
+src/main/resources/db.properties
+src/main/resources/hibernate.local.properties
+.env
+*.env
+
+# --- Runtime files ---
+*.log
+logs/
+*.ser
+attachments/
+uploads/
+
+# --- IDEs ---
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.settings/
+.project
+.classpath
+.factorypath
+nbproject/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Claude Code local settings ---
+.claude/settings.local.json

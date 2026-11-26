@@ -1,0 +1,18 @@
+# Normalize line endings so Windows, macOS and Linux teammates don't fight over CRLF/LF
+* text=auto
+
+# Shell scripts must keep LF; Windows scripts keep CRLF
+mvnw    text eol=lf
+*.sh    text eol=lf
+*.cmd   text eol=crlf
+*.bat   text eol=crlf
+
+# Binary files
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.jar   binary
+*.ser   binary
