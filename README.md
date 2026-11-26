@@ -41,6 +41,48 @@ The domain model (`User`, `Project`, `Bug`, `Comment`, ...) is shared by all lay
 
 A bug that fails QA verification is **Reopened** and goes back to the developer. An admin can mark an invalid report **Rejected / Duplicate**.
 
+## Project structure
+
+```
+BugTrack/
+├── config/
+│   └── db.example.properties   copy to db.properties (ignored by Git) and add your DB password
+├── docs/
+│   ├── BugTrack-Proposal.pdf
+│   ├── WORK_PLAN.md            who does what
+│   ├── FRONTEND.md             how the UI connects to the backend
+│   └── diagrams/               ER diagram, class diagram, wireframes
+└── src/
+    ├── main/
+    │   ├── java/com/bugtrack/
+    │   │   ├── ui/             Moiz   JavaFX app, controllers, UiBackend + FakeBackend
+    │   │   ├── domain/         Arham  JPA entities and enums
+    │   │   ├── infra/          Arham  HibernateUtil, ConnectionManager (Singleton)
+    │   │   ├── dao/            Arham  repository/DAO interfaces
+    │   │   │   ├── hibernate/  Arham  Hibernate repositories (CRUD)
+    │   │   │   └── jdbc/       Arham  JDBC DAOs (transactions, batch, report queries)
+    │   │   ├── report/         Arham  ReportService
+    │   │   │   └── export/     Arham  PDF/CSV exporters (Strategy)
+    │   │   ├── snapshot/       Arham  serialization: snapshots, user settings
+    │   │   ├── service/        Ahsan  service interfaces
+    │   │   │   └── impl/       Ahsan  service implementations
+    │   │   ├── security/       Ahsan  BCrypt, session, permission checks
+    │   │   ├── workflow/       Ahsan  bug lifecycle (State)
+    │   │   ├── event/          Ahsan  notifications, activity log (Observer)
+    │   │   ├── factory/        Ahsan  BugFactory, UserFactory (Factory)
+    │   │   ├── command/        Ahsan  undo last edit (Command, optional)
+    │   │   └── exception/      shared application exceptions
+    │   └── resources/
+    │       ├── com/bugtrack/ui/view/   FXML screens
+    │       ├── com/bugtrack/ui/css/    themes
+    │       └── db/                     schema.sql, seed data
+    └── test/
+        ├── java/com/bugtrack/  JUnit 5 + Mockito tests, same packages as main
+        └── resources/
+```
+
+Each Java package has a `package-info.java` describing what belongs in it.
+
 ## Getting started
 
 > Setup instructions (JDK, MySQL, configuration, build and run) will be added once the Maven project is in place.
