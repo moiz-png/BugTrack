@@ -3,7 +3,7 @@
 **Bug Tracking and Issue Management System**: a JavaFX desktop application for reporting, assigning, resolving and QA-verifying software defects.
 
 Course project for *Software Construction and Development (SCD)*, FAST NUCES Lahore, by Team 12.
-The full proposal is in [docs/BugTrack-Proposal.pdf](docs/BugTrack-Proposal.pdf).
+The full proposal is in [docs/BugTrack-Proposal.pdf](docs/BugTrack-Proposal.pdf). The Phase 1 design (requirements and UML diagrams) is in [docs/BugTrack-Phase1-Documentation.pdf](docs/BugTrack-Phase1-Documentation.pdf).
 
 ## Tech stack
 
@@ -49,6 +49,7 @@ BugTrack/
 │   └── db.example.properties   copy to db.properties (ignored by Git) and add your DB password
 ├── docs/
 │   ├── BugTrack-Proposal.pdf
+│   ├── BugTrack-Phase1-Documentation.pdf   FRs, NFRs, use case, class, ER and package diagrams
 │   ├── WORK_PLAN.md            who does what
 │   ├── FRONTEND.md             how the UI connects to the backend
 │   └── diagrams/               ER diagram, class diagram, wireframes
