@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.bugtrack.ui.controller.DashboardController"
+      spacing="16">
+
+    <HBox spacing="16">
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+            <Label text="Open bugs" styleClass="stat-caption"/>
+            <Label fx:id="openCount" text="–" styleClass="stat-value"/>
+        </VBox>
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+            <Label fx:id="mineCaption" styleClass="stat-caption"/>
+            <Label fx:id="mineCount" text="–" styleClass="stat-value"/>
+        </VBox>
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+            <Label text="Awaiting QA verification" styleClass="stat-caption"/>
+            <Label fx:id="verifyCount" text="–" styleClass="stat-value"/>
+        </VBox>
+        <VBox styleClass="stat-card" HBox.hgrow="ALWAYS">
+            <Label text="Closed" styleClass="stat-caption"/>
+            <Label fx:id="closedCount" text="–" styleClass="stat-value"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="16" prefHeight="300" minHeight="260">
+        <PieChart fx:id="statusChart" title="Bugs by status" legendVisible="false" animated="false"
+                  styleClass="card" HBox.hgrow="ALWAYS"/>
+        <BarChart fx:id="priorityChart" title="Open bugs by priority" legendVisible="false" animated="false"
+                  styleClass="card" HBox.hgrow="ALWAYS">
+            <xAxis>
+                <CategoryAxis/>
+            </xAxis>
+            <yAxis>
+                <NumberAxis minorTickVisible="false" tickUnit="1"/>
+            </yAxis>
+        </BarChart>
+    </HBox>
+
+    <Label fx:id="listTitle" styleClass="section-title"/>
+    <TableView fx:id="listTable" VBox.vgrow="ALWAYS" minHeight="160"/>
+</VBox>
