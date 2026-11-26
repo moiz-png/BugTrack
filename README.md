@@ -47,30 +47,32 @@ A bug that fails QA verification is **Reopened** and goes back to the developer.
 
 ## Team
 
-| Member | Branch | Area |
-|---|---|---|
-| Moiz | `moiz` | Frontend (JavaFX UI) |
-| Arham | `arham` | Database, persistence and reporting |
-| Ahsan | `ahsan` | Business logic (service layer) |
+| Member | Area |
+|---|---|
+| Moiz | Frontend (JavaFX UI) |
+| Arham | Database, persistence and reporting |
+| Ahsan | Business logic (service layer) |
 
-The full task split is in [docs/WORK_PLAN.md](docs/WORK_PLAN.md).
+The full task split is in [docs/WORK_PLAN.md](docs/WORK_PLAN.md). The frontend guide is in [docs/FRONTEND.md](docs/FRONTEND.md).
 
 ## Git workflow
 
 | Branch | Purpose |
 |---|---|
-| `main` | Final, reviewed code. Nobody pushes to it directly. |
-| `moiz`, `arham`, `ahsan` | One working branch per team member |
+| `main` | Released code only. One merge from `develop` per milestone, tagged `v0.1`, `v0.2`, `v1.0`. |
+| `develop` | The integration branch. All finished features are merged here. |
+| `feature/<short-name>` | One branch per task, e.g. `feature/login-screen` or `feature/bug-entity` |
 
 **Rules**
 
-1. **Work on your own branch.** Commit small changes often.
-2. **Merge into `main` often.** When a piece of work is finished (a screen, an entity, a service), open a pull request from your branch into `main`. At least one teammate reviews it before it is merged. Aim for every few days, not once a week.
-3. **Pull `main` into your branch often.** Before starting new work, run:
+1. **Start each task from `develop`:**
    ```bash
-   git checkout <your-branch>
-   git pull origin main
+   git checkout develop
+   git pull origin develop
+   git checkout -b feature/<short-name>
    ```
-   This brings in your teammates' merged work, so conflicts stay small.
-4. **Use Conventional Commits.** Start each message with `feat:`, `fix:`, `test:`, `docs:`, `refactor:` or `chore:`.
-5. **Tag each milestone on `main`:** `v0.1`, `v0.2`, `v1.0`.
+2. **Commit small changes often** on your feature branch.
+3. **Open a pull request into `develop`** when the task is done. At least one teammate reviews it before it is merged. Then delete the feature branch.
+4. **Nobody pushes directly to `main` or `develop`.**
+5. **At the end of each milestone,** when `develop` is stable, merge `develop` into `main` and tag the release.
+6. **Use Conventional Commits.** Start each message with `feat:`, `fix:`, `test:`, `docs:`, `refactor:` or `chore:`.
