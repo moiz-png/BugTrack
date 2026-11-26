@@ -50,8 +50,10 @@ A bug that fails QA verification is **Reopened** and goes back to the developer.
 | Member | Branch | Area |
 |---|---|---|
 | Moiz | `moiz` | Frontend (JavaFX UI) |
-| Arham | `arham` | TBD |
-| Ahsan | `ahsan` | TBD |
+| Arham | `arham` | Database, persistence and reporting |
+| Ahsan | `ahsan` | Business logic (service layer) |
+
+The full task split is in [docs/WORK_PLAN.md](docs/WORK_PLAN.md).
 
 ## Git workflow
 
