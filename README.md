@@ -45,10 +45,30 @@ A bug that fails QA verification is **Reopened** and goes back to the developer.
 
 > Setup instructions (JDK, MySQL, configuration, build and run) will be added once the Maven project is in place.
 
+## Team
+
+| Member | Branch | Area |
+|---|---|---|
+| Moiz | `moiz` | Frontend (JavaFX UI) |
+| Arham | `arham` | TBD |
+| Ahsan | `ahsan` | TBD |
+
 ## Git workflow
 
-- `main` holds released code only. Changes arrive by pull request.
-- `develop` is the integration branch.
-- Each task gets its own `feature/<issue-id>-<short-name>` branch, opened as a PR into `develop` and reviewed by at least one teammate.
-- Commit messages follow Conventional Commits: `feat:`, `fix:`, `test:`, `docs:`, `refactor:`, `chore:`.
-- Each milestone is tagged as a release: `v0.1`, `v0.2`, `v1.0`.
+| Branch | Purpose |
+|---|---|
+| `main` | Final, reviewed code. Nobody pushes to it directly. |
+| `moiz`, `arham`, `ahsan` | One working branch per team member |
+
+**Rules**
+
+1. **Work on your own branch.** Commit small changes often.
+2. **Merge into `main` often.** When a piece of work is finished (a screen, an entity, a service), open a pull request from your branch into `main`. At least one teammate reviews it before it is merged. Aim for every few days, not once a week.
+3. **Pull `main` into your branch often.** Before starting new work, run:
+   ```bash
+   git checkout <your-branch>
+   git pull origin main
+   ```
+   This brings in your teammates' merged work, so conflicts stay small.
+4. **Use Conventional Commits.** Start each message with `feat:`, `fix:`, `test:`, `docs:`, `refactor:` or `chore:`.
+5. **Tag each milestone on `main`:** `v0.1`, `v0.2`, `v1.0`.
